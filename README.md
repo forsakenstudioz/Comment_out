@@ -29,3 +29,7 @@ Zip the files (`manifest.json` at the top level of the zip), submit the zip at <
 ## Privacy
 
 The extension collects and transmits no data. Saved rules are stored locally in the browser.
+
+## License
+
+[Mozilla Public License 2.0](LICENSE)
