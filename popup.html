@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 340px; margin: 0; padding: 12px; font: 13px/1.4 system-ui, sans-serif; color: #1c1c1e; background: #fff; }
+  h1 { font-size: 14px; margin: 0 0 8px; }
+  form { display: flex; gap: 6px; }
+  input[type=text] { flex: 1; min-width: 0; padding: 6px 8px; border: 1px solid #b5b5bd; border-radius: 4px; font: 12px ui-monospace, Consolas, monospace; }
+  button { padding: 6px 10px; border: 1px solid #b5b5bd; border-radius: 4px; background: #f3f3f5; cursor: pointer; font: inherit; }
+  button.primary { background: #0a5fd6; border-color: #0a5fd6; color: #fff; }
+  .hint { color: #5d5d66; font-size: 11px; margin: 6px 0; }
+  label.save { display: flex; align-items: center; gap: 6px; font-size: 12px; margin: 6px 0 10px; }
+  #message { color: #b3261e; font-size: 12px; min-height: 16px; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-top: 1px solid #e4e4e8; }
+  li code { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 12px ui-monospace, Consolas, monospace; }
+  li .count { color: #5d5d66; font-size: 11px; white-space: nowrap; }
+  li button { padding: 3px 8px; font-size: 12px; }
+  #clear { margin-top: 8px; width: 100%; }
+  [hidden] { display: none !important; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #23222b; color: #f1f1f4; }
+    input[type=text], button { background: #33323d; color: #f1f1f4; border-color: #5a5967; }
+    button.primary { background: #3b82f6; border-color: #3b82f6; }
+    .hint, li .count { color: #b0afbd; }
+    li { border-color: #3d3c48; }
+    #message { color: #ff8a80; }
+  }
+</style>
+</head>
+<body>
+  <h1>Comment Out</h1>
+  <form id="form">
+    <input type="text" id="selector" placeholder="div   .class   #id   &lt;div class=&quot;x&quot;&gt;" autofocus>
+    <button class="primary" type="submit">Comment</button>
+  </form>
+  <div class="hint">Tag, .class, #id, any CSS selector, or a pasted opening tag.</div>
+  <div class="hint">On the page: hold Ctrl+Shift and double-click an element to comment it out. Ctrl+Shift+Z undoes the last one.</div>
+  <label class="save"><input type="checkbox" id="save"> Keep on this site after reload</label>
+  <div id="message"></div>
+  <ul id="rules"></ul>
+  <button id="clear" hidden>Restore all</button>
+  <script src="popup.js"></script>
+</body>
+</html>
